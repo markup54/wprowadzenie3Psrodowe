@@ -29,7 +29,17 @@ public class Main {
         }
         return liczbyWczytane;
     }
-
+private static LinkedList<Integer> sprawdzWyniki(HashSet<Integer>wylosowane,
+                                                 ArrayList<Integer>liczbyWczytane){
+    LinkedList<Integer> trafione = new LinkedList<>();
+    //jeżeli jakaś liczba będzie i w wylosowane i w wpisane to dać do trafione
+    for(Integer wylosowana:wylosowane ){
+        if(liczbyWczytane.contains(wylosowana)){
+            trafione.add(wylosowana);
+        }
+    }
+    return trafione;
+}
     public static void main(String[] args) {
         System.out.println("Hello world!");
 
@@ -37,19 +47,10 @@ public class Main {
 
         ArrayList<Integer> liczbyWczytane = wczytajLiczby();
 
-        LinkedList<Integer> trafione = new LinkedList<>();
-        //jeżeli jakaś liczba będzie i w wylosowane i w wpisane to dać do trafione
-        for(Integer wylosowana:wylosowane ){
-            if(liczbyWczytane.contains(wylosowana)){
-                trafione.add(wylosowana);
-            }
-        }
-        System.out.println("Trafiono "+trafione);
-        //różnica pomiędzy typami prostymi i złozonymi
-        int liczba1 =20; // typy proste tylko zmienne, nie mają metod
+        LinkedList<Integer> trafione = sprawdzWyniki(wylosowane,liczbyWczytane);
 
-        Integer liczba2 =30; //typy złożone zawsze pisane z wielkiej litery
-        //obiekty które mają własności i metody
+        System.out.println("Trafiono "+trafione);
+
 
     }
 }
