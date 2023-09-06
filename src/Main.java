@@ -4,6 +4,8 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Main {
+
+
     public static void main(String[] args) {
         System.out.println("Hello world!");
         System.out.println("Zostanie wylosowanych 6 liczb z zakresu od 1 do 100");
@@ -46,5 +48,11 @@ public class Main {
             }
         }
         System.out.println("Trafiono "+trafione);
+        //różnica pomiędzy typami prostymi i złozonymi
+        int liczba1 =20; // typy proste tylko zmienne, nie mają metod
+
+        Integer liczba2 =30; //typy złożone zawsze pisane z wielkiej litery
+        //obiekty które mają własności i metody
+
     }
 }
