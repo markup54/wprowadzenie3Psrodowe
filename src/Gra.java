@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Gra {
-    private HashSet<Integer> wylosowane = new HashSet<>();
+    private static HashSet<Integer> wylosowane = new HashSet<>();
     private ArrayList<Integer> liczbyWczytane = new ArrayList<>();
     private LinkedList<Integer> trafione =new LinkedList<>();
 
@@ -16,6 +16,7 @@ public class Gra {
     }
     private void wczytajLiczby(){
         //Wczytywać z klawiatury 6 liczb bez powtorzen
+        liczbyWczytane = new ArrayList<>();
         Scanner klawiatura = new Scanner(System.in);
         for(int i=0;i<6;i++){
             int liczba;
@@ -29,6 +30,7 @@ public class Gra {
 
     }
     private void sprawdzWyniki(){
+        trafione =new LinkedList<>();
         for(Integer wylosowana:wylosowane ){
             if(liczbyWczytane.contains(wylosowana)){
                 trafione.add(wylosowana);

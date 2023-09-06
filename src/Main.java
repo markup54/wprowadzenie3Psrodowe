@@ -11,5 +11,7 @@ public class Main {
         graPierwsza.zagraj();
         graPierwsza.zagraj();
         //TODO:Losowanie tylko raz i wpisywanie od nowa
+        Gra graDruga = new Gra();
+        graDruga.zagraj();
     }
 }
