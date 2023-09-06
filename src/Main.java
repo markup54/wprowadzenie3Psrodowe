@@ -3,24 +3,19 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world!");
-        System.out.println("Zostanie wylosowana jedna liczba z zakresu od 1 do 100");
-        int liczbaWylosowana = (int) (Math.random() * 100 + 1);//zakres <0,1)
-        System.out.println(liczbaWylosowana);
-        System.out.println("Zgadnij liczbę");
-        Scanner klawiatura = new Scanner(System.in);
-
-        int wpisana = klawiatura.nextInt();
-        while(wpisana != liczbaWylosowana) {
-            if(wpisana>liczbaWylosowana){
-                System.out.println("Wpisano za dużo");
-            }
-            else {
-                System.out.println("Wpisano za mało");
-            }
-            System.out.println("Podaj liczbę z zakresu 1 do 100");
-            wpisana = klawiatura.nextInt();
-
+        System.out.println("Zostanie wylosowanych 6 liczb z zakresu od 1 do 100");
+        int wylosowane[] = new int[6];
+        //tablica w Javie przechowuje typy proste i złożone
+        //musi miec ustalony rozmiar
+        //rozmiaru nie można zmienić w dalszym programie
+        for(int i=0;i<6;i++){
+            wylosowane[i]=(int) (Math.random() * 10 + 1);
         }
-        System.out.println("Gratulacje");
+        System.out.println(wylosowane);//adres obiektu
+        for(int wylosowana:wylosowane){
+            System.out.println(wylosowana+",");
+        }
+
+
     }
 }
