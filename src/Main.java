@@ -14,13 +14,7 @@ public class Main {
         }
         return wylosowane;
     }
-
-    public static void main(String[] args) {
-        System.out.println("Hello world!");
-
-        HashSet<Integer> wylosowane = wylosujLiczby();
-
-
+    private static ArrayList<Integer> wczytajLiczby(){
         //Wczytywać z klawiatury 6 liczb bez powtorzen
         Scanner klawiatura = new Scanner(System.in);
         ArrayList<Integer> liczbyWczytane = new ArrayList<>();
@@ -33,7 +27,15 @@ public class Main {
             }while (liczbyWczytane.contains(liczba));
             liczbyWczytane.add(liczba);
         }
-        System.out.println("Wczytane liczby "+liczbyWczytane);
+        return liczbyWczytane;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Hello world!");
+
+        HashSet<Integer> wylosowane = wylosujLiczby();
+
+        ArrayList<Integer> liczbyWczytane = wczytajLiczby();
 
         LinkedList<Integer> trafione = new LinkedList<>();
         //jeżeli jakaś liczba będzie i w wylosowane i w wpisane to dać do trafione
