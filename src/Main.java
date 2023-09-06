@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -20,6 +22,10 @@ public class Main {
         z int do byte zawezam
 
          */
+        Scanner klawiatura = new Scanner(System.in);
+        System.out.println("Podaj liczbę z zakresu 1 do 100");
+        int wpisana = klawiatura.nextInt();
+        System.out.println("Wstawiono "+wpisana);
 
     }
 }
