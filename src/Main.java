@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Scanner;
 
@@ -22,7 +23,19 @@ public class Main {
         for(int wylosowana:wylosowane){
             System.out.println(wylosowana+",");
         }
+        //Wczytywać z klawiatury 6 liczb bez powtorzen
+        Scanner klawiatura = new Scanner(System.in);
+        ArrayList<Integer> liczbyWczytane = new ArrayList<>();
+        for(int i=0;i<6;i++){
+            int liczba;
+            do {
+                System.out.println("Podaj liczbę");
+                liczba = klawiatura.nextInt();
 
+            }while (liczbyWczytane.contains(liczba));
+            liczbyWczytane.add(liczba);
+        }
+        System.out.println("Wczytane liczby "+liczbyWczytane);
 
     }
 }
