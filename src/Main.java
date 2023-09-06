@@ -8,20 +8,19 @@ public class Main {
         System.out.println(liczbaWylosowana);
         System.out.println("Zgadnij liczbę");
         Scanner klawiatura = new Scanner(System.in);
-        for (int i = 0; i < 10; i++) {
-            System.out.println("Podaj liczbę z zakresu 1 do 100");
-            int wpisana = klawiatura.nextInt();
-            if(wpisana == liczbaWylosowana){
-                System.out.println("Gratulacje");
-                break;
-            }
-            else if(wpisana>liczbaWylosowana){
+
+        int wpisana = klawiatura.nextInt();
+        while(wpisana != liczbaWylosowana) {
+            if(wpisana>liczbaWylosowana){
                 System.out.println("Wpisano za dużo");
             }
             else {
                 System.out.println("Wpisano za mało");
             }
-        }
+            System.out.println("Podaj liczbę z zakresu 1 do 100");
+            wpisana = klawiatura.nextInt();
 
+        }
+        System.out.println("Gratulacje");
     }
 }
