@@ -1,49 +1,26 @@
 import java.util.Scanner;
 
 public class Main {
-
     public static void main(String[] args) {
-
         System.out.println("Hello world!");
         System.out.println("Zostanie wylosowana jedna liczba z zakresu od 1 do 100");
         int liczbaWylosowana = (int) (Math.random() * 100 + 1);//zakres <0,1)
         System.out.println(liczbaWylosowana);
-        /*
-        rzutowanie z double do int
-        rzutowanie zawezajace (int)
-
-        typy proste
-        boolean
-        char
-
-        byte
-        int
-        byte do int rzutowanie które nic nie traci
-        z int do byte zawezam
-
-         */
+        System.out.println("Zgadnij liczbę");
         Scanner klawiatura = new Scanner(System.in);
-        System.out.println("Podaj liczbę z zakresu 1 do 100");
-        int wpisana = klawiatura.nextInt();
-        System.out.println("Wstawiono " + wpisana);
-        if (liczbaWylosowana == wpisana) {
-            System.out.println("Gratulacje");
-        } else {
-            int roznica = liczbaWylosowana > wpisana ? liczbaWylosowana - wpisana : wpisana - liczbaWylosowana;
-            /*
-            wyrażenie warunkowe
-            warunek ? jezeli prawda : jezeli fałsz
-             */
-            roznica = roznica / 10;
-            //dzielenie calkowite, jeżeli dzielimy liczby całkowite to wynik też jest calkowity
-            System.out.println(
-                    switch (roznica){
-                        case 0 -> "Było Blisko";
-                        case 1 -> "Całkiem nieżle";
-                        case 2 -> "Prawie";
-                        default -> "Spróbuj ponownie";
-                    }
-            );
+        for (int i = 0; i < 10; i++) {
+            System.out.println("Podaj liczbę z zakresu 1 do 100");
+            int wpisana = klawiatura.nextInt();
+            if(wpisana == liczbaWylosowana){
+                System.out.println("Gratulacje");
+                break;
+            }
+            else if(wpisana>liczbaWylosowana){
+                System.out.println("Wpisano za dużo");
+            }
+            else {
+                System.out.println("Wpisano za mało");
+            }
         }
 
     }
