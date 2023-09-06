@@ -30,7 +30,11 @@ public class Main {
             System.out.println("Gratulacje");
         }
         else {
-            System.out.println("Innym razem");
+            int roznica = liczbaWylosowana > wpisana ? liczbaWylosowana - wpisana : wpisana - liczbaWylosowana;
+            /*
+            wyrażenie warunkowe
+            warunek ? jezeli prawda : jezeli fałsz
+             */
         }
 
     }
