@@ -26,6 +26,12 @@ public class Main {
         System.out.println("Podaj liczbę z zakresu 1 do 100");
         int wpisana = klawiatura.nextInt();
         System.out.println("Wstawiono "+wpisana);
+        if(liczbaWylosowana == wpisana){
+            System.out.println("Gratulacje");
+        }
+        else {
+            System.out.println("Innym razem");
+        }
 
     }
 }
